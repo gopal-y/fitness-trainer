@@ -1,16 +1,18 @@
-function NavItem({ style, name, href }) {
-  const defaultStyle = {
-    listStyleType: "none",
-    textDecoration: "none",
-  };
-  const _style = { ...defaultStyle, ...style };
+function NavItem({ data }) {
+  const { name, anchor } = data;
+
+  function visit() {
+    window.location.hash = anchor;
+  }
 
   return (
-    <li style={_style}>
-      <a className="nav-link" href={href} style={style}>
-        {name}
-      </a>
-    </li>
+    <button
+      type="button"
+      className="flex h-100p align-items-center nav-link"
+      onClick={visit}
+    >
+      {name}
+    </button>
   );
 }
 

@@ -1,43 +1,26 @@
 import NavItem from "./NavItem";
 
 function NavItemsContainer(props) {
-  const defaultStyle = {
-    display: "flex",
-    justifyContent: "right",
-    marginLeft: "auto",
-    flexWrap: "wrap",
-    rowGap: "100px",
-    columnGap: "15px",
-  };
-  const containerStyle = {
-    display: "flex",
-    padding: "0 5px",
-    alignItems: "center",
-    height: `${props.height ?? 50}px`,
-  };
-  const navLinkStyle = {
-    display: "block",
-    textDecoration: "none",
-    color: props.navItem?.color ?? "#cab",
-    height: "100%",
-  };
-  const navLinkHoverStyle = {
-    background: "#efaace",
-  };
-  const style = { ...defaultStyle, ...props.style };
+  const anchors = [
+    { anchor: "intro", name:"Intro" },
+    { anchor: "transformations", name:"Transformations" },
+    { anchor: "achievements", name:"Achievements" },
+    { anchor: "contact", name:"Contact" },
+  ];
 
   return (
-    <div style={containerStyle}>
-      <a style={navLinkStyle} href="/">
-        HamzaTej
-      </a>
+    <div className="flex align-items-center h-100p">
+      <div className="logo-wrapper">
+        <a className="logo" href="/">
+          HamzaTej
+        </a>
+      </div>
 
-      <ul style={style}>
-        <NavItem style={navLinkStyle} href="#intro" name="Intro"/>
-        <NavItem style={navLinkStyle} href="#transformations" name="Transformations"/>
-        <NavItem style={navLinkStyle} href="#achievements" name="Achievements"/>
-        <NavItem style={navLinkStyle} href="#contact" name="Contact"/>
-      </ul>
+      <div className="h-100p ml-auto p-2">
+        <ul className="h-100p p-2 flex justify-content-right flex-wrap  menu-wrapper">
+          {anchors.map((obj, i) => <NavItem key={i} data={obj}/>)}
+        </ul>
+      </div>
     </div>
   );
 }

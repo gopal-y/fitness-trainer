@@ -1,3 +1,8 @@
+:root {
+  --primary-color: rgb(224, 121, 69);
+  --secondary-color: white;
+}
+
 *,
 *::after,
 *::before {
@@ -20,6 +25,149 @@ code {
     monospace;
 }
 
+.p-2 {
+  padding: 2px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-right {
+  justify-content: right;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+.h-100p {
+  height: 100%;
+}
+
+.w-100p {
+  width: 100%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.logo-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  padding: 2px;
+  display: flex;
+  text-decoration: none;
+  background: var;
+  color: var(--secondary-color);
+  align-items: center;
+  transition-duration: 0.5s;
+}
+
+nav.nav {
+  position: fixed;
+  top: 0;
+  background: transparent;
+  width: 100%;
+  height: 50px;
+  opacity: 0.7;
+  z-index: 999;
+  box-shadow: 0 0 7px rgb(101, 28, 236);
+}
+
+.menu-wrapper {
+  row-gap: 100px;
+  column-gap: 15px;
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.logo:hover,
 .nav-link:hover {
-  background: #d66c6b;
+  color: var(--primary-color) !important;
+  background: var(--secondary-color);
+  transition-duration: 0.5s;
+}
+
+.intro-wrapper {
+  background-image: url("/src/assets/images/ht_main.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.introduction {
+  z-index: 1;
+}
+
+.tagline {
+  color: white;
+  font-weight: 600;
+  font-size: xx-large;
+  font-family: serif;
+}
+
+.loader-wrapper {
+  z-index: 999999;
+  position: absolute;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loader {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  animation: spin 1.6s infinite ease-in;
+}
+
+@keyframes spin {
+  0% {
+    border: none;
+    transform: rotateZ(0);
+  }
+  20% {
+    border-top: 1px solid rgb(101, 28, 236);
+    transform: rotateZ(90deg);
+  }
+  40% {
+    border-right: 1.5px solid rgb(101, 28, 236);
+    transform: rotateZ(180deg);
+  }
+  60% {
+    border-bottom: 2px solid rgb(101, 28, 236);
+    transform: rotateZ(270deg);
+  }
+  80%{
+    border-right: 1.5px solid rgb(101, 28, 236);
+    transform: rotateZ(180deg);
+  }
+  100% {
+    border:2.5px solid rgb(101, 28, 236);
+    transform: rotateZ(360deg);
+  }
 }
